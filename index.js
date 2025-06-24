@@ -62,14 +62,24 @@ li.appendChild(deleteButton);
 function paidInvoice(id) {
 fetch(`${BASE_URL}/${id}`, {
     method: "PATCH",
-    headers: {"Content-type": "application/json"},
+    headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ status:"paid" })
     })
     .then(() => fetch(BASE_URL))
     .then(res => res.json())
     .then(renderInvoices)
 }
-    
+ //Function to delete an invoice
+function deleteInvoice(id) {
+    if (confirm("Are you sure you want to delete this invoice?")){
+    fetch(`${BASE_URL}/${id}`,{
+        method:"DELETE",
+    }) 
+    .then(() => fetch(BASE_URL))
+    .then(res => res.json())
+    .then(renderInvoices);
 
+}
+}
 
 
