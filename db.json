@@ -1,0 +1,82 @@
+{
+  "invoices": [
+    {
+      "id": "3",
+      "customer": "Alice Johnson",
+      "amount": 300,
+      "status": "paid"
+    },
+    {
+      "id": "bad9",
+      "invoiceNumber": "105",
+      "clientName": "Kenblest",
+      "amount": 500,
+      "date": "2025-06-25",
+      "status": "paid"
+    },
+    {
+      "id": "b089",
+      "invoiceNumber": "5",
+      "clientName": "Dan",
+      "amount": 566,
+      "date": "2025-07-04",
+      "status": "paid"
+    },
+    {
+      "id": "f8e9",
+      "invoiceNumber": "7",
+      "clientName": "tim",
+      "amount": 900,
+      "date": "2025-06-25",
+      "status": "unpaid"
+    },
+    {
+      "id": "080e",
+      "invoiceNumber": "8",
+      "clientName": "User",
+      "amount": 780,
+      "date": "2025-06-25",
+      "status": "unpaid"
+    },
+    {
+      "id": "d860",
+      "invoiceNumber": "6",
+      "clientName": "kkk",
+      "amount": 500,
+      "date": "2025-06-27",
+      "status": "unpaid"
+    },
+    {
+      "id": "bec6",
+      "invoiceNumber": "106",
+      "clientName": "flo",
+      "amount": 225,
+      "date": "2025-06-25",
+      "status": "unpaid"
+    },
+    {
+      "id": "4c36",
+      "invoiceNumber": "22",
+      "clientName": "Chap",
+      "amount": 450,
+      "date": "2025-06-26",
+      "status": "unpaid"
+    },
+    {
+      "id": "21f0",
+      "invoiceNumber": "2",
+      "clientName": "tim",
+      "amount": 2222,
+      "date": "2025-07-03",
+      "status": "paid"
+    },
+    {
+      "id": "5a46",
+      "invoiceNumber": "150",
+      "clientName": "Kamau",
+      "amount": 609,
+      "date": "2025-06-26",
+      "status": "unpaid"
+    }
+  ]
+}
