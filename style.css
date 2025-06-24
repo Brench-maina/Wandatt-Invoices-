@@ -1,0 +1,18 @@
+h1{
+    text-align:center;
+    color:black;
+    font-size:larger;
+}
+body{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background: #fff;
+}
+.container{
+    margin:auto;
+    padding:20px;
+    max-width:900px;
+    border-image:linear-gradient(to right, #f06d,#f9a8)1;
+    border-width:5px;
+    border-style:solid;
+    border-radius:10px;
+}
