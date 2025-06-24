@@ -36,15 +36,19 @@ function renderInvoices(invoices){
     list.innerHTML = "";
     invoices.forEach(invoice => {
         const li = document.createElement("li");
-        li.textContent = `No:${invoice.invoiceNumber} - ${invoice.clientName} - $${invoice.amount} - Due: ${invoice.date} - ${invoice.status}`;
+
+        li.innerHTML =`<span>No:${invoice.invoiceNumber} - ${invoice.clientName} - $${invoice.amount} - Due: ${invoice.date} - 
+        <span class="${invoice.status}">${invoice.status}</span></span>`;
 
      const markPaidButton = document.createElement("button");
      markPaidButton.textContent = "Paid";
+     markPaidButton.className= "paid-button";
      markPaidButton.addEventListener("click", () => 
     paidInvoice(invoice.id));
 
 const deleteButton = document.createElement("button");
 deleteButton.textContent = "Delete";
+deleteButton.className = "delete-button";
 deleteButton.addEventListener("click", () =>
     deleteInvoice(invoice.id));
 
@@ -58,7 +62,6 @@ li.appendChild(deleteButton);
 }
 
 //Function to mark an invoice as paid
-
 function paidInvoice(id) {
 fetch(`${BASE_URL}/${id}`, {
     method: "PATCH",
@@ -69,17 +72,18 @@ fetch(`${BASE_URL}/${id}`, {
     .then(res => res.json())
     .then(renderInvoices)
 }
+
  //Function to delete an invoice
 function deleteInvoice(id) {
     if (confirm("Are you sure you want to delete this invoice?")){
     fetch(`${BASE_URL}/${id}`,{
         method:"DELETE",
     }) 
-    .then(() => fetch(BASE_URL))
-    .then(res => res.json())
-    .then(renderInvoices);
-
+    .then(() => {
+        const listItem = document.querySelector(`li[data-id="${id}"]`);
+        if(listItem) {
+            listItem.remove();
+        }
+    });
 }
 }
-
-
