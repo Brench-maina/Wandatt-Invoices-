@@ -1,4 +1,4 @@
-const BASE_URL="http://localhost:3000/invoices";
+const BASE_URL="https://685bfde389952852c2dbcc70.mockapi.io/api/v1/invoices";
 
 const form = document.getElementById("invoice-form");
 const list =document.getElementById("invoice-list");
@@ -24,18 +24,19 @@ form.addEventListener("submit", function(event){
         headers:{"Content-Type":"application/json"},
 body:JSON.stringify(invoice)
     })
-    .then(res => res.json())
-    .then(newInvoice => {
-        renderInvoices([newInvoice]);
-    form.reset();   
+    .then(() => fetch(BASE_URL))
+    .then(res => res.json()) 
+    .then(renderInvoices);
+
+    form.reset();
  });
-});
 
 //Function to render invoices
 function renderInvoices(invoices){
     list.innerHTML = "";
     invoices.forEach(invoice => {
         const li = document.createElement("li");
+        li.setAttribute("data-id", invoice.id);
 
         li.innerHTML =`<span>No:${invoice.invoiceNumber} - ${invoice.clientName} - $${invoice.amount} - Due: ${invoice.date} -
         <span class="${invoice.status}">${invoice.status}</span></span>`;
