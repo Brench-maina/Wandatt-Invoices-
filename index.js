@@ -37,7 +37,7 @@ function renderInvoices(invoices){
     invoices.forEach(invoice => {
         const li = document.createElement("li");
 
-        li.innerHTML =`<span>No:${invoice.invoiceNumber} - ${invoice.clientName} - $${invoice.amount} - Due: ${invoice.date} - 
+        li.innerHTML =`<span>No:${invoice.invoiceNumber} - ${invoice.clientName} - $${invoice.amount} - Due: ${invoice.date} -
         <span class="${invoice.status}">${invoice.status}</span></span>`;
 
      const markPaidButton = document.createElement("button");
@@ -87,3 +87,17 @@ function deleteInvoice(id) {
     });
 }
 }
+//search for invoice by invoice number
+document.getElementById("search-box").addEventListener("input", function () {
+    const searchTerm =this.value.toLowerCase();  //toLowerCase ensures the search is case insensitive
+
+    fetch(BASE_URL)
+    .then(res => res.json())
+    .then(invoices => {
+        const filtered = invoices.filter(invoice =>
+            invoice.invoiceNumber &&   invoice.invoiceNumber .toString().toLowerCase().includes(searchTerm)
+        );
+        renderInvoices(filtered);
+    });
+});
+
