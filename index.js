@@ -65,13 +65,13 @@ li.appendChild(deleteButton);
 //Function to mark an invoice as paid
 function paidInvoice(id) {
 fetch(`${BASE_URL}/${id}`, {
-    method: "PATCH",
+    method: "PUT",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ status:"paid" })
     })
     .then(() => fetch(BASE_URL))
     .then(res => res.json())
-    .then(renderInvoices)
+    .then(renderInvoices);
 }
 
  //Function to delete an invoice
