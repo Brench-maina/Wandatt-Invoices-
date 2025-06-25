@@ -9,6 +9,7 @@
 <body> 
   <div class="container">
       <h1>Wandatt Invoices</h1>
+      <input type="text" id="search-box" placeholder="Search by invoice no: " required>
       <form id ="invoice-form">
         <input type="text" id="invoiceNumber" placeholder="Invoice Number"required>
         <input type="text"  id="clientName" placeholder="Client Name" required>
@@ -16,7 +17,6 @@
         <input type="date" id="date" placeholder="Due Date" required>
         <button type="submit"> + Add Invoice </button>
       </form>
-       <input type="text" id="search-box" placeholder="Search by invoice no: " required>
       <ul id="invoice-list"></ul>
     </div>
   <script src = "index.js"></script>
