@@ -1,7 +1,7 @@
 # Wandatt-Invoices-
 # Project Description
 This is a simple, interactive invoice management application built using HTML,CSS, and JavaScript that helps users track and manage client invoices in real time. 
-- It communicates with a mock public API to perform CRUD operations on invoices in real-time.
+- It communicates with a mock public API provided by mockAPI.io to perform CRUD operations on invoices in real-time.
 
 # Features
 - Add New Invoices - Users can submit invoice details which invoice number, client name, amount, due date and status.
